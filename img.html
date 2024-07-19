@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiggaGallery</title>
+    <link rel="icon" href="./9d5e8b37cab3a21efd01f588b694cbb3.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa; /* Light cyan background */
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            color: #ff6347; /* Tomato color */
+            margin: 20px 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid #ffeb3b; /* Bright yellow border */
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .gallery img::before {
+            content: url('https://img.icons8.com/ios/50/000000/smiling.png'); /* Spinning smiley sticker */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            animation: spin 4s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .fullscreen-modal img {
+            max-width: 90%;
+            max-height: 80%;
+            border: none;
+            box-shadow: none;
+        }
+        .fullscreen-modal .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .fullscreen-modal .download {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ffeb3b;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .gallery img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to GiggaGallery!</h1>
+    <div class="gallery">
+        <img src="./1be91948bb228ebc114f0e456b1c08f5.jpg" onclick="showFullscreen(this)">
+<img src="./1da2fa7abef80d5ddf7f613b0d35ea01.jpg" onclick="showFullscreen(this)">
+<img src="./1f4a45cfea56d4f83a3e734293122739.jpg" onclick="showFullscreen(this)">
+<img src="./2051c674b1a21b7dfc51570c719a1375.jpg" onclick="showFullscreen(this)">
+<img src="./25d3a261be199b92083c27ea368cc8c8.jpg" onclick="showFullscreen(this)">
+<img src="./26efc39b5ee916db2434e5e4b0302b17.jpg" onclick="showFullscreen(this)">
+<img src="./28841880b613e3b0a7a75010356d2b9f.jpg" onclick="showFullscreen(this)">
+<img src="./2bb3e6061086324777969341fb020576.jpg" onclick="showFullscreen(this)">
+<img src="./3099bba1a8682861c87b576e457870f5.jpg" onclick="showFullscreen(this)">
+<img src="./30a2f69bc691c6ca8ac2b2fc4f14b0ae.jpg" onclick="showFullscreen(this)">
+<img src="./30d1fe47a4c042f290efa6a1e07b39ce.jpg" onclick="showFullscreen(this)">
+<img src="./35609ee7271562567b9738d5d2d9dfe8.jpg" onclick="showFullscreen(this)">
+<img src="./360955faf0cb8c33460e723cc6e5551f.jpg" onclick="showFullscreen(this)">
+<img src="./444eab547d07c56a36cbed695f41c27f.jpg" onclick="showFullscreen(this)">
+<img src="./4c11d934f2f6ade784ebbc5df3d70c19.jpg" onclick="showFullscreen(this)">
+<img src="./51d2efa6755de788ec0b241862bb1b19.jpg" onclick="showFullscreen(this)">
+<img src="./52ea6d41c4332be6edcb3ade82d1dd6b.jpg" onclick="showFullscreen(this)">
+<img src="./538a2c8a20357a30fd711a430fb5f1c6.jpg" onclick="showFullscreen(this)">
+<img src="./587b57f888b1cdcc0e895cbdcfde1c1e.jpg" onclick="showFullscreen(this)">
+<img src="./5caf162cdb733a28b6f13bb563946426.jpg" onclick="showFullscreen(this)">
+<img src="./62a49356a1e81430d00a731c4cf469e9.jpg" onclick="showFullscreen(this)">
+<img src="./63159c7e9664da99901bee4d9d2effdd.jpg" onclick="showFullscreen(this)">
+<img src="./6d0a79411d20c0a0a526fa8b91ded7e3.jpg" onclick="showFullscreen(this)">
+<img src="./70dcf5baf62fc9df57f97b877b4162af.png" onclick="showFullscreen(this)">
+<img src="./7c59c6bff4bad535efb8d59dd5ffb9ad.jpg" onclick="showFullscreen(this)">
+<img src="./8c0ea3eec5d0d0ad3c2b54e67ee440cd.jpg" onclick="showFullscreen(this)">
+<img src="./8e77776215cfd0ec68f460c70d5e5b2b.jpg" onclick="showFullscreen(this)">
+<img src="./99c10baba717f0077a64c2188cbb3916.jpg" onclick="showFullscreen(this)">
+<img src="./9c5f75bcc3427cf7ce9a1047814063dc.jpg" onclick="showFullscreen(this)">
+<img src="./9d5e8b37cab3a21efd01f588b694cbb3.jpg" onclick="showFullscreen(this)">
+<img src="./a260d7537bf5b824ed858894148be0c1.jpg" onclick="showFullscreen(this)">
+<img src="./a56897f0f61d3aae5a1d9f4c9c4cfa68.jpg" onclick="showFullscreen(this)">
+<img src="./a74932ec274e2db0f7185a1fa0003733.jpg" onclick="showFullscreen(this)">
+<img src="./ab729fb4c488860c23b0653d75bace60.jpg" onclick="showFullscreen(this)">
+<img src="./af25917c7175c56cd744fcd3d521c511.jpg" onclick="showFullscreen(this)">
+<img src="./b70199fdadfa62ad9c1441b879f5895d.jpg" onclick="showFullscreen(this)">
+<img src="./bc7d19cf08324d629af1e5dfa2873f90.jpg" onclick="showFullscreen(this)">
+<img src="./c05ad86ab58c361871da3cd4979974a3.jpg" onclick="showFullscreen(this)">
+<img src="./c06e36fdaf034e5f4cb99e3b147571a9.jpg" onclick="showFullscreen(this)">
+<img src="./c7a55cfea5be3ed44979e6ee9b80d283.jpg" onclick="showFullscreen(this)">
+<img src="./cd5a5324ffdfdfbb2602e89a696bf762.jpg" onclick="showFullscreen(this)">
+<img src="./cefb18b2be052588d5b390016769c042.jpg" onclick="showFullscreen(this)">
+<img src="./d2d02b1dd2c0a0a83b5323eff0cf2ca8.jpg" onclick="showFullscreen(this)">
+<img src="./d2df937fda6560cc68b27cb7966d4f58.jpg" onclick="showFullscreen(this)">
+<img src="./d4ea09f0e6ee3c28b76358be9dd31fe2.jpg" onclick="showFullscreen(this)">
+<img src="./d7f03e03252f503667c099a78a332730.jpg" onclick="showFullscreen(this)">
+<img src="./dad5c701d80762e796e221f096858c7b.jpg" onclick="showFullscreen(this)">
+<img src="./de9e93adafb06164b63d62e9fe0640ff.jpg" onclick="showFullscreen(this)">
+<img src="./e37f96a97686498cdbda721706b10229.jpg" onclick="showFullscreen(this)">
+<img src="./e897b66dce4d1fa1ac031485d7d8152e.jpg" onclick="showFullscreen(this)">
+<img src="./eb704f9c92f1b34bb8db0462be1d5d89.jpg" onclick="showFullscreen(this)">
+<img src="./ef0b5eabdc1788247066711a8231331f.jpg" onclick="showFullscreen(this)">
+<img src="./f15d6da4edb719127c4d2613e0d465e6.jpg" onclick="showFullscreen(this)">
+<img src="./fd5188098f19524c7b772c34fd19caa7.jpg" onclick="showFullscreen(this)">
+    </div>
+
+    <!-- Fullscreen Modal -->
+    <div class="fullscreen-modal" id="fullscreenModal">
+        <span class="close" onclick="closeFullscreen()">&times;</span>
+        <img id="fullscreenImage" src="" alt="">
+        <a id="downloadLink" class="download" href="" download>Download</a>
+    </div>
+
+    <script>
+        function showFullscreen(img) {
+            var modal = document.getElementById('fullscreenModal');
+            var fullscreenImg = document.getElementById('fullscreenImage');
+            var downloadLink = document.getElementById('downloadLink');
+
+            fullscreenImg.src = img.src;
+            downloadLink.href = img.src;
+            downloadLink.download = img.src.split('/').pop();
+
+            modal.style.display = 'flex';
+        }
+
+        function closeFullscreen() {
+            document.getElementById('fullscreenModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
